@@ -1,0 +1,18 @@
+@import "./colors.scss";
+
+$fa-font-path:   "../../node_modules/font-awesome/fonts/" !default;
+@import "../../node_modules/font-awesome/scss/font-awesome";
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+$flag-icon-css-path: '~flag-icon-css/flags' !default;
+@import "~flag-icon-css/sass/flag-icon";
+
+.orange-scss
+{
+	color:orange;
+}
+
+.brd {
+	border:1px solid #CCCCCC;
+}

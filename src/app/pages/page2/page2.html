@@ -1,0 +1,14 @@
+
+<div><a routerLink="/main" routerLinkActive="is-active">back to Main</a>
+  <h1>Page2</h1>
+  <!--
+  | Unnamed nested router-outlet example
+  a(routerLink="/page2/subpage1", routerLinkActive="is-active") Page2-SubPage1
+  br
+  a(routerLink="./subpage2", routerLinkActive="is-active") Page2-SubPage2
+  br
+  router-outlet
+  -->
+  <h4>Named nested router-outlet example</h4><a [routerLink]="{outlets:{subpageview:'subpage1'}}" routerLinkActive="is-active">Page2-SubPage1</a><br/><a [routerLink]="{outlets:{subpageview:'subpage2'}}" routerLinkActive="is-active">Page2-SubPage2</a><br/>
+  <router-outlet name="subpageview"></router-outlet>
+</div>

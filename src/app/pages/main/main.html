@@ -1,0 +1,58 @@
+
+<div>
+  <h1>Mainpage</h1><a routerLink="/main" routerLinkActive="is-active">Main</a><br/><a routerLink="/page1/121" routerLinkActive="is-active">Page1 with url param</a><br/><a routerLink="/page2" routerLinkActive="is-active">Page2</a>
+  <hr/><br/><br/>
+  <h4>Images:</h4><img src="assets/logo.png"/>
+  <hr/><br/><br/>
+  <h4>Styles:</h4>
+  <h4 class="local-css">component local style</h4>global style:<br/>
+  <h4 class="orange-scss">Content scss</h4>
+  <h4 class="blue-scss">Content scss-import</h4>
+  <hr/><br/><br/>
+  <h4>Font awesome:</h4><i class="fa fa-user"></i><i class="fa fa-user"></i>
+  <hr/><br/><br/>
+  <h4>Flag icon css</h4><span class="flag-icon flag-icon-de"></span><br/><span class="flag-icon flag-icon-us"></span><br/><span class="flag-icon flag-icon-ru"></span>
+  <hr/><br/><br/>
+  <h4>Bootstrap4</h4><br/>
+  <button class="btn btn-primary" type="button">Primary</button>
+  <button class="btn btn-secondary" type="button">Secondary</button>
+  <button class="btn btn-success" type="button">Success</button>
+  <button class="btn btn-danger" type="button">Danger</button>
+  <button class="btn btn-warning" type="button">Warning</button>
+  <button class="btn btn-info" type="button">Info</button>
+  <button class="btn btn-light" type="button">Light</button>
+  <button class="btn btn-dark" type="button">Dark</button>
+  <hr/><br/><br/>
+  <h4>Moment.js: </h4>{{dt}}
+  <hr/><br/><br/>
+  <h4>Lodash</h4>clonedObjByLodash.f1.subF1.SubSubF1={{clonedObjByLodash.f1.subF1.SubSubF1}}
+  <hr/><br/><br/>
+  <h4>Form</h4>
+  <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+    <div class="form-group">
+      <label>Email</label>
+      <input class="form-control" type="email" required="required" minlength="4" maxlength="20" [(ngModel)]="model.email" name="email" #email="ngModel"/>
+      <div class="alert alert-danger" *ngIf="email.errors?.required">Email is required</div>
+      <div class="alert alert-danger" *ngIf="email.errors?.minlength">Email too short</div>
+      <div class="alert alert-danger" *ngIf="email.errors?.maxlength">Email too long</div>
+      <div class="alert alert-danger" [hidden]="email.valid || email.pristine">Email field not valid</div>
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input class="form-control" type="password" required="required" minlength="8" maxlength="20" [(ngModel)]="model.pass" name="pass" #pass="ngModel"/>
+      <div class="alert alert-danger" *ngIf="pass.errors?.required">Password is required</div>
+      <div class="alert alert-danger" *ngIf="pass.errors?.minlength">Password too short</div>
+      <div class="alert alert-danger" *ngIf="pass.errors?.maxlength">Password too long</div>
+      <div class="alert alert-danger" [hidden]="pass.valid || pass.pristine">Password field not valid</div>
+    </div>
+  </form>
+  <hr/><br/><br/>
+  <h4>ajax</h4>
+  <button class="btn btn-primary" type="button" (click)="LoadSettings()">
+     Load settings from server</button><br/>id:{{loadedSettings.id}}<br/>name:{{loadedSettings.name}}<br/>age:{{loadedSettings.age}}<br/>visible:{{loadedSettings.visibility}}
+  <hr/><br/><br/>
+  <h4>I18N</h4>translated hello={{ 'HELLO' | translate }}
+  <button class="btn btn-primary" type="button" (click)="setLang('ru')">RU</button>
+  <button class="btn btn-primary" type="button" (click)="setLang('en')">EN</button>
+  <hr/><br/><br/>
+</div>

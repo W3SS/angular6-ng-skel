@@ -1,0 +1,133 @@
+div
+	h1 Mainpage
+	a(routerLink="/main", routerLinkActive="is-active") Main
+	br
+	a(routerLink="/page1/121", routerLinkActive="is-active") Page1 with url param
+	br
+	a(routerLink="/page2", routerLinkActive="is-active") Page2
+	hr
+	br
+	br
+
+	h4 Images:
+	img(src="assets/logo.png")
+	hr
+	br
+	br
+
+	h4 Styles:
+	h4.local-css component local style
+	| global style:
+	br
+	h4.orange-scss Content scss
+	h4.blue-scss Content scss-import
+	hr
+	br
+	br
+
+	h4 Font awesome:
+	i.fa.fa-user
+	i.fa.fa-user
+	hr
+	br
+	br
+
+	h4 Flag icon css
+	span.flag-icon.flag-icon-de
+	br
+	span.flag-icon.flag-icon-us
+	br
+	span.flag-icon.flag-icon-ru
+	hr
+	br
+	br
+
+	h4 Bootstrap4
+	br
+	button.btn.btn-primary(type="button") Primary
+	button.btn.btn-secondary(type="button") Secondary
+	button.btn.btn-success(type="button") Success
+	hr
+	br
+	br
+
+
+	h4 Moment.js: 
+	| {{dt}}
+	hr
+	br
+	br
+
+	h4 Lodash
+	| clonedObjByLodash.f1.subF1.SubSubF1={{clonedObjByLodash.f1.subF1.SubSubF1}}
+	hr
+	br
+	br
+
+	h4 Form
+	form((ngSubmit)="onSubmit()", #heroForm="ngForm")
+		.form-group
+			label Email
+			input.form-control(
+				type="email",
+				required,
+				minlength="4",
+				maxlength="20",
+				[(ngModel)]="model.email",
+				name="email",
+				#email="ngModel"
+			)
+			.alert.alert-danger(*ngIf="email.errors?.required")
+				| Email is required
+			.alert.alert-danger(*ngIf="email.errors?.minlength")
+				| Email too short
+			.alert.alert-danger(*ngIf="email.errors?.maxlength")
+				| Email too long
+			.alert.alert-danger([hidden]="email.valid || email.pristine")
+				| Email field not valid
+
+		.form-group
+			label Password
+			input.form-control(
+				type="password",
+				required,
+				minlength="8",
+				maxlength="20",
+				[(ngModel)]="model.pass",
+				name="pass",
+				#pass="ngModel"
+			)
+			.alert.alert-danger(*ngIf="pass.errors?.required")
+				| Password is required
+			.alert.alert-danger(*ngIf="pass.errors?.minlength")
+				| Password too short
+			.alert.alert-danger(*ngIf="pass.errors?.maxlength")
+				| Password too long
+			.alert.alert-danger([hidden]="pass.valid || pass.pristine")
+				| Password field not valid
+	hr
+	br
+	br
+
+	h4 ajax
+	button.btn.btn-primary(type="button", (click)="LoadSettings()") 
+		| Load settings from server
+	br
+	| id:{{loadedSettings.id}}
+	br
+	| name:{{loadedSettings.name}}
+	br
+	| age:{{loadedSettings.age}}
+	br
+	| visible:{{loadedSettings.visibility}}
+	hr
+	br
+	br
+
+	h4 I18N
+	| translated hello={{ 'HELLO' | translate }}
+	button.btn.btn-primary(type="button", (click)="setLang('ru')") RU
+	button.btn.btn-primary(type="button", (click)="setLang('en')") EN
+	hr
+	br
+	br
