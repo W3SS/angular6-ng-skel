@@ -11,7 +11,7 @@
 
 ### It also uses several packages and technologies typical for web applications
 
-[Angular6] (https://angularjs.org/)
+[Angular6] (https://angularjs.io)
 
 [Angular-translate] (http://www.ngx-translate.com)
 
